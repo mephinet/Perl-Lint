@@ -371,3 +371,13 @@ if (! close $fh) {
     croak "Error closing $file after reading: $!";
 }
 
+===
+--- dscr: OX-like syntactic sugar (creates hash, not sub)
+--- failures: 0
+--- params:
+--- input
+sub as (&) { $_[0] }
+something as {
+    foo => 42;
+}
+
